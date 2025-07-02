@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import {motion, AnimatePresence} from 'framer-motion'
+import menuImg from '../../assets/menu.png'; 
 
 
 // Define your props interface with the selection prop being optional
@@ -74,8 +75,10 @@ const Header: React.FC<HeaderProps> = ({ selection }) => { // if ___ is selected
                     <button 
                         className="xsm:hidden flex border-primary relative my-[.3rem] mx-[.5rem] z-10 border-[.1rem] shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)] bg-secondary border-solid w-[2rem] h-[2rem] justify-center rounded-[27%] items-center"
                         onClick={Menu}
-                    >
-                        <img src="src/assets/menu.png" alt="Menu" className="w-[1.3rem] h-[1.3rem] justify-center" />
+                        >
+
+                        <img src={menuImg} alt="Menu" className="w-[1.3rem] h-[1.3rem] justify-center" />
+
                     </button>
                 </div>
             </nav>
