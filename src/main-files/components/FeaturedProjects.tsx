@@ -5,6 +5,7 @@ import {motion, AnimatePresence} from 'framer-motion'
 
 
 
+
 const FeaturedProjects = () => {
 
     const [isOpen, setIsOpen] = useState(true);
@@ -42,6 +43,25 @@ const FeaturedProjects = () => {
         },
     }
 
+    const boxVariants = {
+        closed: {
+            maxHeight: '20px',
+            transition: {
+                duration: .5, 
+                ease: 'easeInOut', 
+            },
+        },
+        open: {
+            maxHeight: '5000px',
+            
+            transition: {
+                duration: .5, 
+                ease: 'easeInOut', 
+            },
+        },
+        
+    }
+
 
 
 
@@ -50,19 +70,19 @@ const FeaturedProjects = () => {
         <div className='bg-secondary  border-solid border-primary p-[.5rem] rounded-[1rem] border-[.1rem] flex flex-col mb-[2rem] h-auto shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)] overflow-hidden'>
 
 
-            <div className='bg-secondary   flex flex-col mb-[.8rem] h-auto '>
+            <motion.div className='bg-secondary   flex flex-col mb-[.8rem] h-auto '  variants={boxVariants}  animate= {isOpen ? 'open' : 'closed'}>
                     
                 <div className="relative text-[1rem] flex items-center font-gothic ">
                     
                     <div className="flex flex-col xsm:text-[1.5rem] sml:text-[2rem]  text-center flex-grow">
                         Featured Projects
-                        <hr className="border-primary w-[8.2rem] sml:w-[16.5rem] xsm:w-[12.5rem] mx-auto rounded-lg shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]" />
+                        <hr className="border-primary w-[8.2rem] xsm:hidden sml:w-[16.5rem] xsm:w-[12.5rem] mx-auto rounded-lg shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]" />
                     </div>
   
                     <div className="absolute right-0 z-0 sml:hidden ">
                         <button
                         onClick={toggleDropdown}
-                        className="bg-tertiary rounded-lg mt-3 mr-1 flex border-solid border-[.1rem] border-primary items-center shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]"
+                        className="bg-tertiary rounded-lg mt-3 mr-1 xsm:m-2 flex border-solid border-[.1rem] border-primary items-center shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]"
                         >
                             <RiArrowDropDownLine size="2rem" />
                         </button>
@@ -71,12 +91,7 @@ const FeaturedProjects = () => {
                 </div>
                     
                 <AnimatePresence>
-                    {isOpen   && <motion.div
-                    
-                    variants={dropDownVariants}
-                    initial='hidden'
-                    animate='visible'
-                    exit='exit'>
+                    {isOpen   && <motion.div variants={dropDownVariants} initial='hidden' animate='visible' exit='exit'>
                         <div className=" flex flex-col sml:flex-row sml:mx-10 items-center justify-center lrg:space-x-[5rem] sml:space-x-[2rem] space-y-[.5rem]">
 
 
@@ -181,7 +196,7 @@ const FeaturedProjects = () => {
 
                     </motion.div>}
                 </AnimatePresence>
-            </div>
+            </motion.div>
             
 
         </div>
