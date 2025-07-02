@@ -1,4 +1,4 @@
-import { useState } from "react";
+//import { useState } from "react";
 import {motion} from 'framer-motion'
 
 
@@ -10,10 +10,10 @@ interface DropdownProps {
   }
 
 
-  const Dropdown: React.FC<DropdownProps> = ({options,className,placeHolder = "Select an option",}) => {
+  const Dropdown: React.FC<DropdownProps> = ({/*options,*/className,placeHolder = "Select an option",}) => {
 
-    const [isOpen, setIsOpen] = useState(false)
-    const [selected, setSelected] = useState(null)
+    //const [isOpen, setIsOpen] = useState(false)
+    //const [selected, setSelected] = useState(null)
 
 
     return(
