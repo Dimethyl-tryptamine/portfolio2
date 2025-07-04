@@ -1,11 +1,62 @@
 
 import Track from "./util/Track";
+import { TiArrowLeft, TiArrowRight } from "react-icons/ti";
+import Certification from "./util/Certification";
+import { useEffect, useState } from "react";
+import { siteData, Certification as CertificationType } from '../../assets/Variables';
+import { motion, AnimatePresence } from "framer-motion";
+
+
+
+
+const certifications: CertificationType[] = siteData.certifications;
+const swipeConfidenceThreshold = 100;
 
 
 
 
 
 const Certifications = () => {
+
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [direction, setDirection] = useState(0);
+
+    
+
+
+    
+
+    const paginate = (newDirection: number) => {
+        setDirection(newDirection);
+        setCurrentIndex((prevIndex) => {
+            if (newDirection === 1) {
+                return prevIndex === certifications.length - 1 ? 0 : prevIndex + 1;
+            } else {
+                return prevIndex === 0 ? certifications.length - 1 : prevIndex - 1;
+            }
+        });
+    };
+
+    const variants = {
+        enter: (direction: number) => ({
+            x: direction > 0 ? 300 : -300,
+            opacity: 0,
+        }),
+        center: {
+            x: 0,
+            opacity: 1,
+        },
+        exit: (direction: number) => ({
+            x: direction < 0 ? 300 : -300,
+            opacity: 0,
+        }),
+    };
+
+
+    useEffect(() => {
+        console.log(direction);
+    }, [currentIndex]);
 
 
     return(
@@ -21,12 +72,69 @@ const Certifications = () => {
             </div>
 
 
-            <div className="flex flex-col justify-center sml:hidden ">
 
-                <p className='text-[.8rem] xsm:text-[1rem] sml:text-[1.2rem] text-center m-2'>
-                    this is where i am going to make a slide show of my certifications with a button to pervious and next the slideshow will be a horizontal dragable 
 
-                </p>
+
+
+                   
+
+
+            <div className="flex flex-col h-[16rem] justify-center sml:hidden ">
+
+                <div className="flex flex-row justify-center items-center relative h-full w-full">
+
+                    
+                    
+
+
+                    
+
+
+
+
+                    <div className="relative overflow-hidden w-full h-[16rem] flex items-center justify-center">
+                        <AnimatePresence initial={false} custom={direction}>
+                            <motion.div
+                            key={currentIndex} // important for AnimatePresence to track slide changes
+                            custom={direction} // pass direction to variants
+                            variants={variants}
+                            initial="enter"
+                            animate="center"
+                            exit="exit"
+                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                            dragElastic={1}
+                            onDragEnd={(_, info) => {
+                                if (info.offset.x > swipeConfidenceThreshold) {
+                                paginate(-1); // swipe right = previous slide
+                                } else if (info.offset.x < -swipeConfidenceThreshold) {
+                                paginate(1);  // swipe left = next slide
+                                }
+                            }}
+                            className="w-full h-full flex items-center justify-center"
+                            style={{ position: "absolute" }} // needed for AnimatePresence sliding
+                            >
+                            <Certification {...certifications[currentIndex]} />
+                            </motion.div>
+                        </AnimatePresence>
+                        </div>
+
+
+                    <div className=" absolute left-0 inset-y-0 w-1/4  flex items-center justify-start"  onClick={() => paginate(-1)}>
+                        <TiArrowLeft className="text-[3rem] "/>
+                    </div>
+
+
+                    <div className=" absolute right-0 inset-y-0 w-1/4  flex items-center justify-end" onClick={() => paginate(+1)}>
+                        <TiArrowRight className="text-[3rem] "/>
+                    </div>
+
+
+                   
+                    
+                    
+                </div>
 
 
             </div>
@@ -40,3 +148,4 @@ const Certifications = () => {
 }
 
 export default Certifications;
+

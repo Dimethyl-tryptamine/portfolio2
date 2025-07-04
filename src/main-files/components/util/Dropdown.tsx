@@ -6,11 +6,12 @@ import {motion} from 'framer-motion'
 interface DropdownProps {
     options: string[]; // Array of strings for dropdown options
     placeHolder?: string; // Optional placeholder text
-    className:string;
-  }
+    className?: string; // Optional className for consistency
+    onSelect?: () => void; // Optional onSelect handler
+}
 
 
-  const Dropdown: React.FC<DropdownProps> = ({/*options,*/className,placeHolder = "Select an option",}) => {
+  const Dropdown: React.FC<DropdownProps> = ({/*options,*/className,placeHolder = "Select an option",onSelect}) => {
 
     //const [isOpen, setIsOpen] = useState(false)
     //const [selected, setSelected] = useState(null)
@@ -18,7 +19,7 @@ interface DropdownProps {
 
     return(
         <>
-        <button className={` bg-tertiary rounded-md flex items-center justify-center   ${className || ""} `}> 
+        <button className={` bg-tertiary rounded-md flex items-center justify-center   ${className || ""} `} onClick={onSelect}> 
 
             <div className="flex items-center text-[.6rem] m-1">
                 <span>{placeHolder}</span>
@@ -37,7 +38,7 @@ interface DropdownProps {
                     </svg>
                 </div>
             </div>
-        <button/>
+        </button>
 
 
 
@@ -61,7 +62,7 @@ interface DropdownProps {
 
 
 
-        </button>
+        
         
  
         </>

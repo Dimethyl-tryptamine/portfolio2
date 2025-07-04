@@ -3,14 +3,13 @@ import '../../index.css'
 import { siteData } from '../../assets/Variables';
 import profilegreen from '../../assets/profilegreen.gif'
 import Dropdown from '../components/util/Dropdown';
-
-
-
+import { useState } from 'react';
 
 
 
 
 function Skills() {
+    const [selectedOption, setSelectedOption] = useState('frontend');
 
    
 
@@ -21,10 +20,11 @@ function Skills() {
 
     return (
         <>
-            <div className=" mt-[3.5rem] grid grid-cols-[min-content,1fr] gap-1">
+            <div className="mt-[3.5rem] grid grid-cols-1 xsm:grid-cols-[min-content,1fr] gap-1 max-w-5xl mx-auto">
 
 
-                <div className="flex relative   left-0">
+
+                <div className=" relative  hidden xsm:flex left-0">
                     <table className="border-separate border-spacing-y-[2rem] m-[.1rem] w-min">
                         <tbody>
                         {siteData.timeline.map((data, index) => {
@@ -76,7 +76,7 @@ function Skills() {
                             <h1 className='p-1 text-[1.5rem]'>My Journey</h1> 
                             <div className=' flex flex-col items-center'>
                                 <img src={profilegreen} alt="Profile Green" className="w-[7rem] h-[7rem] rounded-full mb-3 mt-5" />
-                                <p className='p-2 mt-1 min-w-[10rem] max-w-[25rem] flex text-[.7rem] justify-center'>My journey into technology began at the Bronx Academy for Software Engineering, where my curiosity transformed into hands-on experience through web development internships. From my first day of school to my high school graduation in 2023, each milestone deepened my understanding and fueled my goal of becoming a software engineer—whether mastering statistics or coding syntax. In 2024, I officially launched my career and am now building on my skills before pursuing a related degree at LaGuardia Community College. Beyond coding, I balance my technical passion with skateboarding, volleyball, and gaming, blending active and creative pursuits.</p>                  
+                                <p className='p-2 mt-1 min-w-[10rem] max-w-[25rem] flex text-[.7rem] justify-center'>My journey into technology began at the Bronx Academy for Software Engineering, where my curiosity transformed into hands-on experience through web development internships. From my first day of school to my high school graduation in 2023, each milestone deepened my understanding and fueled my goal of becoming a software engineer—whether mastering statistics or learning various programming languages. In 2024, I officially launched my career and am now building on my skills before pursuing a related degree at LaGuardia Community College. Beyond coding, I balance my technical passion with skateboarding, volleyball, and gaming, blending active and creative pursuits.</p>                  
                             </div>
                             
                         </div>
@@ -89,14 +89,44 @@ function Skills() {
                     <div>
                         <div className="m-2 bg-secondary min-w-[10rem] max-w-[25rem] border-solid border-primary text-center rounded-[1rem] border-[.1rem] flex flex-col overflow-hidden h-auto shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)] ">
                             <h1 className='p-1 text-[1.5rem]'>My Skills</h1> 
-                            <p className='p-2 mt-1 min-w-[10rem] max-w-[25rem] flex text-[.7rem] justify-center'>Throughout my programming journey, I have dedicated countless hours to learning, experimenting, and honing my skills in various areas of technology and development. This experience has not only expanded my technical capabilities but has also instilled a deep passion for problem-solving and innovation. Below is a comprehensive overview of the key skills I have acquired.</p>
+                            <p className='p-2 mt-1 min-w-[10rem] max-w-[25rem] flex text-[.7rem] justify-center'>Throughout my programming journey, I have dedicated countless hours to learning, experimenting, and honing my skills across various areas of technology and development. This experience has not only expanded my technical capabilities but also fueled a deep passion for problem-solving and innovation. Below is an overview of the key skills I’ve acquired, along with my personal take on my level of mastery.</p>
                             
 
                             <div className='w-full flex justify-center items-center gap-[.3rem] sml:hidden mb-2 mx-1 '>
-                                <Dropdown placeHolder='Front-End Development' options={['frontend', 'backend','other']} className=''/>
-                                <Dropdown placeHolder='Back-End Development' options={['frontend', 'backend','other']} className=''/>
-                                <Dropdown placeHolder='DevOps & Deployment' options={['frontend', 'backend','other']} className=''/>
-                                <Dropdown placeHolder='Quality Assurance' options={['frontend', 'backend','other']} className=''/>
+                                <Dropdown
+                                    placeHolder='Front-End Development'
+                                    options={['frontend', 'backend', 'other']}
+                                    onSelect={() => setSelectedOption('frontend')}
+                                    className={`rounded-md ${selectedOption === "frontend" ? "border-primary border" : ""}`}
+                                />
+
+                                <Dropdown 
+                                placeHolder='Back-End Development' 
+                                options={['frontend', 'backend','other']}
+                                onSelect={() => setSelectedOption('backend')}
+                                className={`rounded-md ${selectedOption === "backend" ? "border-primary border" : ""}`}/>
+
+
+
+                                <Dropdown 
+                                placeHolder='DevOps & Deployment' 
+                                options={['frontend', 'backend','other']} 
+                                onSelect={() => setSelectedOption('devops')}
+                                className={`rounded-md ${selectedOption === "devops" ? "border-primary border" : ""}`}/>
+                                
+                            
+
+
+                                <Dropdown 
+                                placeHolder='Quality Assurance' 
+                                options={['frontend', 'backend','other']} 
+                                onSelect={() => setSelectedOption('QA')}
+                                className={`rounded-md ${selectedOption === "QA" ? "border-primary border" : ""}`}/>
+                                
+
+                            </div>
+                            <div className='sml:hidden w-full m-2 p-3 justify-center flex h-[200px] border-solid border-black rounded-sm'>
+                                display
                             </div>
                             
 
@@ -148,8 +178,12 @@ function Skills() {
                                 
                             </table>
                         </div>
+
+
+
                         <div className="m-2 bg-secondary min-w-[10rem] max-w-[25rem] border-solid border-primary text-center rounded-[1rem] border-[.1rem] flex flex-col overflow-hidden h-auto shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)] ">
                             <h1 className='p-1 text-[1.5rem]'>About Me</h1> 
+                            <p className='p-2 mt-1 min-w-[10rem] max-w-[25rem] flex text-[.7rem] justify-center'>Outside of coding, I enjoy staying active—whether through skateboarding, exercising, or exploring new interests. I'm an avid learner who frequently dives into YouTube deep-dives on technology, economics, and real estate investing. I also have a strong appreciation for strategy-based activities like fishing, which reflect my patience and analytical mindset. I’m a self-driven individual who enjoys breaking down complex ideas—be it a new programming framework or an economic model—and applying that knowledge to real-world problems. Much of my learning happens through hands-on experimentation and personal projects. You can explore the Case Studies section of my portfolio to see how I’ve tackled technical challenges and developed practical solutions.</p>
                         </div>
                         <div className="med:hidden m-2 bg-secondary min-w-[10rem] max-w-[25rem] border-solid border-primary text-center rounded-[1rem] border-[.1rem] flex flex-col overflow-hidden h-auto shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)] ">
                             <h1 className='p-1 text-[1.5rem]'>Games</h1> 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import {motion, AnimatePresence} from 'framer-motion'
 import menuImg from '../../assets/menu.png'; 
+import { useLocation } from 'react-router-dom';
 
 
 // Define your props interface with the selection prop being optional
@@ -13,6 +14,8 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ selection }) => { // if ___ is selected dynamicly show a purple underline under that specific link in the nav 
 
     const [isVisible,setIsVisible] = useState(false);
+    const location = useLocation();
+    const currentPath = location.pathname;
 
 
     
@@ -97,28 +100,40 @@ const Header: React.FC<HeaderProps> = ({ selection }) => { // if ___ is selected
                     <div className=' text-black'>
                         <nav className='w-[100vw]    flex flex-col '>
     
-                            <ul className= "space-y-3  left-0 relative text-[2rem] "> 
+                            <ul className="space-y-3 left-0 relative text-[2rem] font-mali">
+                                <li>
+                                    <Link to="/" className={currentPath === '/' ? 'text-white' : 'text-[#141414]'}>
+                                    Home
+                                    </Link>
+                                    <hr className="w-[5.5rem] h-[20px]" />
+                                </li>
 
                                 <li>
-                                    <Link to="/" className="font-mali ">Home</Link>
-                                    <hr className='w-[5.5rem] h-[20px]'></hr>
+                                    <Link to="/skills" className={currentPath === '/skills' ? 'text-white' : 'text-[#141414]'}>
+                                    Skills
+                                    </Link>
+                                    <hr className="w-[5rem] h-[20px]" />
                                 </li>
-                                
+
                                 <li>
-                                    <Link to="/skills" className="font-mali ">Skills</Link>
-                                    <hr className='w-[5rem] h-[20px]'></hr>
+                                    <Link to="/projects" className={currentPath === '/projects' ? 'text-white' : 'text-[#141414]'}>
+                                    Projects
+                                    </Link>
+                                    <hr className="w-[8.5rem] h-[20px]" />
                                 </li>
+
                                 <li>
-                                    <Link to="/projects" className="font-mali ">Projects</Link>
-                                    <hr className='w-[8.5rem] h-[20px]'></hr>
+                                    <Link to="/contacts" className={currentPath === '/contacts' ? 'text-white' : 'text-[#141414]'}>
+                                    Contacts
+                                    </Link>
+                                    <hr className="w-[9rem] h-[20px]" />
                                 </li>
+
                                 <li>
-                                    <Link to="/contacts" className="font-mali ">Contacts</Link>
-                                    <hr className='w-[9rem] h-[20px]'></hr>
-                                </li>
-                                <li>
-                                    <Link to="/blog" className="font-mali ">Blog</Link>
-                                    <hr className='w-[4.3rem] h-[20px]'></hr>
+                                    <Link to="/blog" className={currentPath === '/blog' ? 'text-white' : 'text-[#141414]'}>
+                                    Blog
+                                    </Link>
+                                    <hr className="w-[4.3rem] h-[20px]" />
                                 </li>
                             </ul>
                         </nav>
