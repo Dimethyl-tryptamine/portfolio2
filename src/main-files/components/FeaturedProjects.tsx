@@ -28,7 +28,7 @@ const FeaturedProjects = () => {
         visible: {
             y: '0vh',
             transition: {
-                duration: 0.5, 
+                duration: .8, 
                 ease: 'easeInOut', 
             },
 
@@ -72,7 +72,7 @@ const FeaturedProjects = () => {
 
             <motion.div className='bg-secondary   flex flex-col mb-[.8rem] h-auto '  variants={boxVariants}  animate= {isOpen ? 'open' : 'closed'}>
                     
-                <div className="relative text-[1rem] flex items-center font-gothic ">
+                <div className="relative text-[1rem] flex items-center font-gothic z-10">
                     
                     <div className="flex flex-col xsm:text-[1.5rem] sml:text-[2rem]  text-center flex-grow">
                         Featured Projects
@@ -82,9 +82,9 @@ const FeaturedProjects = () => {
                     <div className="absolute right-0 z-0 sml:hidden ">
                         <button
                         onClick={toggleDropdown}
-                        className="bg-tertiary rounded-lg mt-3 mr-1 xsm:m-2 flex border-solid border-[.1rem] border-primary items-center shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]"
+                        className="bg-tertiary rounded-lg mt-3 mr-1 xsm:m-2 flex border-solid border-[.1rem] border-primary items-center shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)] "
                         >
-                            <RiArrowDropDownLine size="2rem" />
+                            <RiArrowDropDownLine size="2rem" className= {`transition-transform duration-300 ease-in-out ${isOpen ? `rotate-90` : ''}`} />
                         </button>
                     </div>
 

@@ -79,9 +79,9 @@ const Certifications = () => {
                    
 
 
-            <div className="flex flex-col h-[16rem] justify-center sml:hidden ">
+            
 
-                <div className="flex flex-row justify-center items-center relative h-full w-full">
+                <div className="flex flex-row justify-center items-center relative h-full w-full max-w-[20rem] m-auto ">
 
                     
                     
@@ -122,12 +122,13 @@ const Certifications = () => {
 
 
                     <div className=" absolute left-0 inset-y-0 w-1/4  flex items-center justify-start"  onClick={() => paginate(-1)}>
-                        <TiArrowLeft className="text-[3rem] "/>
+                        <TiArrowLeft className="text-[3rem] text-primary "/>
                     </div>
 
 
                     <div className=" absolute right-0 inset-y-0 w-1/4  flex items-center justify-end" onClick={() => paginate(+1)}>
-                        <TiArrowRight className="text-[3rem] "/>
+                        <TiArrowRight className="text-[3rem] text-primary 
+                         "/>
                     </div>
 
 
@@ -137,7 +138,7 @@ const Certifications = () => {
                 </div>
 
 
-            </div>
+            
         </div>
 
 
