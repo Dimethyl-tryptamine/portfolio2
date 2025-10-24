@@ -8,6 +8,15 @@ module.exports = {
     },],
   theme: {
     extend: {
+      animation: {
+        scroll: 'scroll var(--scroll-duration) linear infinite',
+      },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' }, // move half of duplicated items
+        },
+      },
       boxShadow: {
         'border-white': '0 0 4px .05px rgba(255, 255, 255, .3)', // White border shadow
       },
@@ -33,7 +42,9 @@ module.exports = {
         'lrg': '1500px', 
         'xlrg': '1920px', 
       },
+      
     },
+    
   },
   plugins: [],
 }

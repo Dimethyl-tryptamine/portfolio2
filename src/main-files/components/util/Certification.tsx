@@ -19,8 +19,9 @@ const Certification: React.FC<CertificationProps> = ({
 
 
   for (let i = 1; i < colors.length - 1; i++) {
-    gradients += ` via-${colors[i]} to-${colors[colors.length - 1]}`;
+    gradients += ` via-${colors[i]} `;
   }
+  gradients += `to-${colors[colors.length - 1]}`;
 
   
 
