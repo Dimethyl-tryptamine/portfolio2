@@ -15,7 +15,9 @@ const ScrollWheel: React.FC<ScrollWheelProps> = ({ children, className, scrollSp
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
-  const handleMouseDown = (e: React.MouseEvent) => {
+  
+
+  const handleMouseDown = (e: React.PointerEvent) => {
     if (!scrollRef.current) return;
     isDragging.current = true;
     startX.current = e.pageX - scrollRef.current.offsetLeft;
@@ -26,7 +28,7 @@ const ScrollWheel: React.FC<ScrollWheelProps> = ({ children, className, scrollSp
     isDragging.current = false;
   };
 
-  const handleMouseMove = (e: React.MouseEvent) => {
+  const handleMouseMove = (e: React.PointerEvent) => {
     if (!isDragging.current || !scrollRef.current) return;
     e.preventDefault();
     const x = e.pageX - scrollRef.current.offsetLeft;
@@ -37,10 +39,10 @@ const ScrollWheel: React.FC<ScrollWheelProps> = ({ children, className, scrollSp
   return (
     <div
       ref={scrollRef}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUpOrLeave}
-      onMouseLeave={handleMouseUpOrLeave}
-      onMouseMove={handleMouseMove}
+      onPointerDown={handleMouseDown}
+      onPointerUp={handleMouseUpOrLeave}
+      onPointerLeave={handleMouseUpOrLeave}
+      onPointerMove={handleMouseMove}
       className={`flex sml:hidden overflow-x-hidden gap-4 border border-none p-2 select-none ${className}`}
       style={{ cursor: isDragging.current ? "grabbing" : "grab" }}
     >
