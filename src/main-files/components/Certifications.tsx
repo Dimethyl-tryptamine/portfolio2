@@ -1,10 +1,6 @@
 
 import Track from "./util/Track";
-import { TiArrowLeft, TiArrowRight } from "react-icons/ti";
-import Certification from "./util/Certification";
-import { useEffect, useState } from "react";
-import { siteData, Certification as CertificationType } from '../../assets/Variables';
-import { motion, AnimatePresence } from "framer-motion";
+
 import ScrollWheel from "./util/ScrollWheel";
 
 
