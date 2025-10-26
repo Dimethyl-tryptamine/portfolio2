@@ -43,7 +43,7 @@ const ScrollWheel: React.FC<ScrollWheelProps> = ({ children, className, scrollSp
       onPointerUp={handleMouseUpOrLeave}
       onPointerLeave={handleMouseUpOrLeave}
       onPointerMove={handleMouseMove}
-      className={`flex sml:hidden overflow-x-hidden gap-4 border border-none p-2 select-none ${className}`}
+      className={`flex  touch-none sml:hidden overflow-x-hidden gap-4 border border-none p-2 select-none ${className}`}
       style={{ cursor: isDragging.current ? "grabbing" : "grab" }}
     >
       {children ? children : <ScrollWheelFallbackItems />}
