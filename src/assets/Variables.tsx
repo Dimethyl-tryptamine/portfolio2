@@ -73,6 +73,76 @@ export const siteData = {
       link: "https:g3546g24.org",
       showcaseImage: ""
     },
+    {
+      title: "Clasification title 1",
+      colors: ["primary","red1","blue1"],   // if multiple separate them using ,  (customColor1, customColor2, ) ensure colors are defined in tailwind.config file 
+      logo: githubLogo,
+      previewDescription: ' Get on the fast track to a career in UX design. In this certificate program, you’ll learn in-demand skills, and get AI training from Google experts. Learn at your own pace, no degree or experience required.  ',
+      description: " this is the full description",
+      issuer: "Github",
+      date: " 11/2/2028",
+      link: "https:vb76fuc8of.org",
+      showcaseImage: ""
+    },
+
+    {
+      title: "Clasification title 2",
+      colors: ["primary","quaternary"],   
+      logo: linkedinLogo,
+      previewDescription: "Get on the fast track to a career in UX design. In this certificate program, you’ll learn in-demand skills, and get AI training from Google experts. Learn at your own pace, no degree or experience required. ",
+      description: "this is the full description",
+      issuer: "Coursera",
+      date: "7/20/2018",
+      link: "https:g3546g24.org",
+      showcaseImage: ""
+    },
+
+      {
+      title: "Clasification title 3",
+      colors: ["primary","quaternary"],   
+      logo: linkedinLogo,
+      previewDescription: "Get on the fast track to a career in UX design. In this certificate program, you’ll learn in-demand skills, and get AI training from Google experts. Learn at your own pace, no degree or experience required. ",
+      description: "this is the full description",
+      issuer: "Coursera",
+      date: "7/20/2018",
+      link: "https:g3546g24.org",
+      showcaseImage: ""
+    },
+    {
+      title: "Clasification title 1",
+      colors: ["primary","red1","blue1"],   // if multiple separate them using ,  (customColor1, customColor2, ) ensure colors are defined in tailwind.config file 
+      logo: githubLogo,
+      previewDescription: ' Get on the fast track to a career in UX design. In this certificate program, you’ll learn in-demand skills, and get AI training from Google experts. Learn at your own pace, no degree or experience required.  ',
+      description: " this is the full description",
+      issuer: "Github",
+      date: " 11/2/2028",
+      link: "https:vb76fuc8of.org",
+      showcaseImage: ""
+    },
+
+    {
+      title: "Clasification title 2",
+      colors: ["primary","quaternary"],   
+      logo: linkedinLogo,
+      previewDescription: "Get on the fast track to a career in UX design. In this certificate program, you’ll learn in-demand skills, and get AI training from Google experts. Learn at your own pace, no degree or experience required. ",
+      description: "this is the full description",
+      issuer: "Coursera",
+      date: "7/20/2018",
+      link: "https:g3546g24.org",
+      showcaseImage: ""
+    },
+
+      {
+      title: "Clasification title 3",
+      colors: ["primary","quaternary"],   
+      logo: linkedinLogo,
+      previewDescription: "Get on the fast track to a career in UX design. In this certificate program, you’ll learn in-demand skills, and get AI training from Google experts. Learn at your own pace, no degree or experience required. ",
+      description: "this is the full description",
+      issuer: "Coursera",
+      date: "7/20/2018",
+      link: "https:g3546g24.org",
+      showcaseImage: ""
+    },
     
     
     

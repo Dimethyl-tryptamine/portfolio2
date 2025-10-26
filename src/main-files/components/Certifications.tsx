@@ -23,7 +23,7 @@ const Certifications = () => {
             
             
             <Track />
-            <ScrollWheel />
+            <ScrollWheel scrollSpeed={3} />
 
             
 
