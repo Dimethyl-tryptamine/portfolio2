@@ -12,7 +12,7 @@ const Track: React.FC<{ speed?: number }> = ({ speed = 4 }) => {
   return (
     <div className="overflow-hidden w-full">
       <div
-        className="flex animate-scroll"
+        className="sml:flex hidden animate-scroll"
         style={{ "--scroll-duration": `${speed}s` } as React.CSSProperties}
       >
         {doubleItems.map((item, idx) => (
