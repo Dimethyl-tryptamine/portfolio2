@@ -63,23 +63,23 @@ return (
             <ul className="  hidden sml:flex relative flex-row space-x-[1rem] mx-[.5rem] text-[2rem]">
                 <li>
                     <Link to="/" className="font-mali text-[1.5rem]">Home</Link>
-                    <hr className={`w-[4rem] h-[20px] border-primary ${currentPath === "/" ? "border-b-4 border-purple-600" : ""}`}></hr>
+                    <hr className={`w-[4rem] m-0 p-0 h-[0px]  border-solid  border-primary ${currentPath === "/" ? "border-b-4 border-purple-600" : ""}`}></hr>
                 </li>
                 <li>
                     <Link to="/skills" className="font-mali text-[1.5rem]">Skills</Link>
-                    <hr className={`w-[4rem] h-[20px] border-primary ${currentPath === "/skills" ? "border-b-4 border-purple-600" : ""}`}></hr>
+                    <hr className={`w-[4rem]  border-primary ${currentPath === "/skills" ? "border-b-4 border-purple-600" : ""}`}></hr>
                 </li>
                 <li>
                     <Link to="/projects" className="font-mali text-[1.5rem]">Projects</Link>
-                    <hr className={`w-[6.5rem] h-[20px] border-primary ${currentPath === "/projects" ? "border-b-4 border-purple-600" : ""}`}></hr>
+                    <hr className={`w-[6.5rem]  border-primary ${currentPath === "/projects" ? "border-b-4 border-purple-600" : ""}`}></hr>
                 </li>
                 <li>
                     <Link to="/contacts" className="font-mali text-[1.5rem]">Contacts</Link>
-                    <hr className={`w-[7rem] h-[20px] border-primary ${currentPath === "/contacts" ? "border-b-4 border-purple-600" : ""}`}></hr>
+                    <hr className={`w-[7rem]  border-primary ${currentPath === "/contacts" ? "border-b-4 border-purple-600" : ""}`}></hr>
                 </li>
                 <li>
                     <Link to="/blog" className="font-mali text-[1.5rem]">Blog</Link>
-                    <hr className={`w-[3.5rem] h-[20px] border-primary ${currentPath === "/blog" ? "border-b-4 border-purple-600" : ""}`}></hr>
+                    <hr className={`w-[3.5rem]  border-primary ${currentPath === "/blog" ? "border-b-4 border-purple-600" : ""}`}></hr>
                 </li>
             </ul>
 
