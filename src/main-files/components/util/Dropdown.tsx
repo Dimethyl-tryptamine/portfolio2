@@ -1,70 +1,52 @@
-//import { useState } from "react";
-import {motion} from 'framer-motion'
 
+
+import React from 'react';
+import { motion } from 'framer-motion';
 
 
 interface DropdownProps {
-    options: string[]; // Array of strings for dropdown options
-    placeHolder?: string; // Optional placeholder text
-    className?: string; // Optional className for consistency
-    onSelect?: () => void; // Optional onSelect handler
+    placeHolder: string;
+    options?: string[];
 }
 
+const Dropdown: React.FC<DropdownProps> = ({ placeHolder, options = [] }: DropdownProps) => {
 
-  const Dropdown: React.FC<DropdownProps> = ({/*options,*/className,placeHolder = "Select an option",onSelect}) => {
+    const [isOpen, setIsOpen] = React.useState<boolean>(false);
+    const [selectedOption, setSelectedOption] = React.useState<string | null>(null);
 
-    //const [isOpen, setIsOpen] = useState(false)
-    //const [selected, setSelected] = useState(null)
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+        console.log(isOpen);
+    }
 
 
-    return(
+    return (
         <>
-        <button className={` bg-tertiary rounded-md flex items-center justify-center   ${className || ""} `} onClick={onSelect}> 
+            <div style={{ position: 'relative', display: 'inline-block' }}>
+                <button onClick={toggleDropdown}>{placeHolder}</button>
 
-            <div className="flex items-center text-[.6rem] m-1">
-                <span>{placeHolder}</span>
-                <div className="flex items-center justify-center w-min m-1">
-                    <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        strokeWidth="0"
-                        viewBox="7 9 10 6"
-                        className="text-[.6rem]"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
+                {isOpen && (
+                    <motion.div
+                        className="inline-block"
+                        initial={{ opacity: 0, y: -6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.12 }}
+                        style={{
+                            position: 'absolute',
+                            top: '100%',   // place directly below the button
+                            left: 0,
+                            marginTop: 8,  // gap between button and dropdown
+                            zIndex: 999,
+                        }}
                     >
-                        <path d="M12 15.0006L7.75732 10.758L9.17154 9.34375L12 12.1722L14.8284 9.34375L16.2426 10.758L12 15.0006Z"></path>
-                    </svg>
-                </div>
+                        <ul style={{ margin: 0, padding: 0 }}>
+                            {options.map((opt, i) => (
+                                <li key={i} style={{ fontSize: '1rem' }}>{opt}</li>
+                            ))}
+                        </ul>
+                    </motion.div>
+                )}
             </div>
-        </button>
-
-
-
-
-
-
-        <motion.div className="hidden">
-            <button>1</button>
-            <button>1</button>
-            <button>1</button>
-            <button>1</button>
-            <button>1</button>
-        </motion.div>
-
-
-
-
-
-
-
-
-
-
-        
-        
- 
         </>
     )
 }

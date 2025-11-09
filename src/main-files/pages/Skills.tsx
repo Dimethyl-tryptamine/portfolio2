@@ -93,35 +93,38 @@ function Skills() {
                             
 
                             <div className='w-full flex justify-center items-center gap-[.3rem] sml:hidden mb-2 mx-1 '>
-                                <Dropdown
-                                    placeHolder='Front-End Development'
-                                    options={['frontend', 'backend', 'other']}
-                                    onSelect={() => setSelectedOption('frontend')}
-                                    className={`rounded-md ${selectedOption === "frontend" ? "border-primary border" : ""}`}
-                                />
+                                <Dropdown {...({
+                                    placeHolder: 'Front-End Development',
+                                    options: ['frontend', 'backend', 'other'],
+                                    onSelect: () => setSelectedOption('frontend'),
+                                    className: `rounded-md ${selectedOption === "frontend" ? "border-primary border" : ""}`
+                                } as any)} />
 
-                                <Dropdown 
-                                placeHolder='Back-End Development' 
-                                options={['frontend', 'backend','other']}
-                                onSelect={() => setSelectedOption('backend')}
-                                className={`rounded-md ${selectedOption === "backend" ? "border-primary border" : ""}`}/>
+                                <Dropdown {...({
+                                    placeHolder: 'Back-End Development',
+                                    options: ['frontend', 'backend','other'],
+                                    onSelect: () => setSelectedOption('backend'),
+                                    className: `rounded-md ${selectedOption === "backend" ? "border-primary border" : ""}`
+                                } as any)}/>
 
 
 
-                                <Dropdown 
-                                placeHolder='DevOps & Deployment' 
-                                options={['frontend', 'backend','other']} 
-                                onSelect={() => setSelectedOption('devops')}
-                                className={`rounded-md ${selectedOption === "devops" ? "border-primary border" : ""}`}/>
+                                <Dropdown {...({
+                                    placeHolder: 'DevOps & Deployment',
+                                    options: ['frontend', 'backend','other'],
+                                    onSelect: () => setSelectedOption('devops'),
+                                    className: `rounded-md ${selectedOption === "devops" ? "border-primary border" : ""}`
+                                } as any)}/>
                                 
-                            
 
 
-                                <Dropdown 
-                                placeHolder='Quality Assurance' 
-                                options={['frontend', 'backend','other']} 
-                                onSelect={() => setSelectedOption('QA')}
-                                className={`rounded-md ${selectedOption === "QA" ? "border-primary border" : ""}`}/>
+
+                                <Dropdown {...({
+                                    placeHolder: 'Quality Assurance',
+                                    options: ['frontend', 'backend','other'],
+                                    onSelect: () => setSelectedOption('QA'),
+                                    className: `rounded-md ${selectedOption === "QA" ? "border-primary border" : ""}`
+                                } as any)}/>
                                 
 
                             </div>
