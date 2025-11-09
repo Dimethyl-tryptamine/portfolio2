@@ -63,7 +63,7 @@ return (
             <ul className="  hidden sml:flex relative flex-row space-x-[1rem] mx-[.5rem] text-[2rem]">
                 <li>
                     <Link to="/" className="font-mali text-[1.5rem]">Home</Link>
-                    <hr className={`w-[4rem] m-0 p-0 h-[0px]  border-solid  border-primary ${currentPath === "/" ? "border-b-4 border-purple-600" : ""}`}></hr>
+                    <hr className={`w-[4rem] h-[0rem]  border-solid  border-primary ${currentPath === "/" ? "border-b-4 border-purple-600" : ""}`}></hr>
                 </li>
                 <li>
                     <Link to="/skills" className="font-mali text-[1.5rem]">Skills</Link>

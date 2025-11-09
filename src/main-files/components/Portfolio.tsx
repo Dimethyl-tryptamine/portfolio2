@@ -1,6 +1,9 @@
 
-import { BsDownload } from "react-icons/bs";
 
+import DownloadLinks from "./util/DownloadLinks";
+import myPortfolioImgpng from "../../assets/my portfolio.png";
+import myPortfolioImgjpg from "../../assets/my portfolio.jpg";
+import myPortfolioImgpdf from "../../assets/my portfolio.pdf";
 
 const Portfolio = () => {
 
@@ -22,11 +25,9 @@ const Portfolio = () => {
                         Feel free to explore my work and get in touch if you'd like to collaborate or learn more about my projects!
                     </div>
                     <div className='flex w-full justify-end '>
-                        
-                        <div className='bg-tertiary m-1 cursor-pointer text-[.8rem] sml:text-[1rem] med:text-[1.5rem] border-primary border-[.1rem] flex justify-center items-center rounded-xl p-1 pt-[.15rem] pb-[.15rem] shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]'> <BsDownload className='m-auto' />PNG</div>
-                        <div className='bg-tertiary m-1 cursor-pointer text-[.8rem] sml:text-[1rem] med:text-[1.5rem] border-primary border-[.1rem] flex justify-center items-center rounded-xl p-1 pt-[.15rem] pb-[.15rem] shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]'> <BsDownload className='m-auto' />PDF</div>
-                        <div className='bg-tertiary m-1  cursor-pointer text-[.8rem] sml:text-[1rem] med:text-[1.5rem] border-primary border-[.1rem] flex justify-center items-center rounded-xl p-1 pt-[.15rem] pb-[.15rem] shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]'> <BsDownload className='m-auto' />JPG</div>
-                        
+                        <DownloadLinks text="JPG" file={myPortfolioImgjpg} />
+                        <DownloadLinks text="PDF" file={myPortfolioImgpdf} />
+                        <DownloadLinks text="PNG" file={myPortfolioImgpng} />
                     </div>
                     
                 </div>
