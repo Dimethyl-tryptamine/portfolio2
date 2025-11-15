@@ -20,7 +20,7 @@ function Home() {
             <Hero />
             
             
-            <div className=" p-[.5rem]  m-[1rem] sml:m-[2rem] sml:mt-0 mt-0 overflow-x-hidden ">
+            <div className=" p-[.5rem] m-[1rem] sml:m-[5rem] sml:mt-0 mt-0 overflow-x-hidden ">
                 
 
                 <Portfolio />
