@@ -1,20 +1,17 @@
 
 
 import React from 'react';
-import { motion } from 'framer-motion';
 
 
-interface DropdownProps {
-    placeHolder: string;
-    options?: string[];
-}
 
-const Dropdown: React.FC<DropdownProps> = ({ placeHolder, options = [] }: DropdownProps) => {
 
-    const [isOpen, setIsOpen] = React.useState<boolean>(false);
-    const [selectedOption, setSelectedOption] = React.useState<string | null>(null);
 
-    const toggleDropdown = () => {
+const Dropdown= () => {
+
+    const [isOpen, setIsOpen] = React.useState<boolean>(true);
+    
+
+    const handleClick = () => {
         setIsOpen(!isOpen);
         console.log(isOpen);
     }
@@ -22,31 +19,14 @@ const Dropdown: React.FC<DropdownProps> = ({ placeHolder, options = [] }: Dropdo
 
     return (
         <>
-            <div style={{ position: 'relative', display: 'inline-block' }}>
-                <button onClick={toggleDropdown}>{placeHolder}</button>
-
-                {isOpen && (
-                    <motion.div
-                        className="inline-block"
-                        initial={{ opacity: 0, y: -6 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.12 }}
-                        style={{
-                            position: 'absolute',
-                            top: '100%',   // place directly below the button
-                            left: 0,
-                            marginTop: 8,  // gap between button and dropdown
-                            zIndex: 999,
-                        }}
-                    >
-                        <ul style={{ margin: 0, padding: 0 }}>
-                            {options.map((opt, i) => (
-                                <li key={i} style={{ fontSize: '1rem' }}>{opt}</li>
-                            ))}
-                        </ul>
-                    </motion.div>
-                )}
-            </div>
+            <button onClick={handleClick} className={`bg-[#141414] ${isOpen ? 'rotate-90' : ''} transform transition-transform duration-300 ease-in-out rounded-md border border-[#8800ff] p-[.3rem] mr-1 shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]`}>
+                <svg  className="w-5  " viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#121111" stroke-width="0">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier"> 
+                    <path transform="translate(12 12) scale(2) translate(-12 -12)" fill-rule="evenodd" clip-rule="evenodd" d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z" fill="#ffffff"></path> </g>
+                </svg>
+            </button>
         </>
     )
 }

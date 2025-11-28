@@ -36,6 +36,7 @@ module.exports = {
         blue1: '#0000FF',
       },
       screens: {
+        'xxs': '390px',
         'xsm': '500px',
         'sml': '720px', 
         'med': '1000px', 

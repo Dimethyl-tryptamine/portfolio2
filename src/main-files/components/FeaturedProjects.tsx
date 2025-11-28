@@ -3,6 +3,7 @@ import { useState } from "react"
 import { RiArrowDropDownLine } from "react-icons/ri";
 import {motion, AnimatePresence} from 'framer-motion'
 import { useWindowWidth } from "./util/CustomHooks";
+import Dropdown from "./util/Dropdown";
 
 
 
@@ -79,44 +80,51 @@ const FeaturedProjects = () => {
                     <hr className="border-primary w-[8.2rem] xsm:hidden sml:w-[16.5rem] xsm:w-[12.5rem] mx-auto rounded-lg shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]" />
                 </div>
 
+                <div className="w-full flex justify-end">
+                    
+                    <Dropdown/>
+                    
+                </div>
+                
+
                 <div className="grid grid-cols-1 gap-1 sml:grid-cols-2 mt-4">
 
-                    <div className=" h-[7rem] bg-tertiary rounded-lg flex m-3 flex-row items-center justify-center border-[.1rem] border-solid border-primary shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]">
+                    <div className=" h-[7rem] bg-tertiary rounded-lg flex m-3 flex-row items-center border-[.1rem] border-solid border-primary shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]">
                         
-                        <img alt="image of project#1" src={tricon} className="h-full w-[9rem] block mr-2 rounded-l-lg"/>
-                        <div className="m-2 rounded-lg ">
-                            <h1 className="flex justify-center font-semibold ">Project Title</h1>
-                            <p className=" text-xs text-left">This was a project about making a website for the here I used react node.js and tailwind along with typescript</p>
+                        <img alt="image of project#1" src={tricon} className="h-full w-[9rem]  mr-2 rounded-l-lg"/>
+                        <div className="m-2 rounded-lg w-full">
+                            <h1 className="flex w-full justify-center font-semibold ">Project Title</h1>
+                            <p className=" hidden xxs:flex text-xs text-left">This was a project about making a website for the here I used react node.js and tailwind along with typescript</p>
                         </div>
 
                     </div>
 
-                    <div className=" h-[7rem] bg-tertiary rounded-lg flex m-3 flex-row items-center justify-center border-[.1rem] border-solid border-primary shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]">
+                    <div className=" h-[7rem] bg-tertiary rounded-lg flex m-3 flex-row items-center  border-[.1rem] border-solid border-primary shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]">
                         
                         <img alt="image of project#1" src={tricon} className="h-full w-[9rem] block mr-2 rounded-l-lg"/>
-                        <div className="m-2 rounded-lg ">
-                            <h1 className="flex justify-center font-semibold ">Project Title</h1>
-                            <p className=" text-xs text-left">This was a project about making a website for the here I used react node.js and tailwind along with typescript</p>
+                        <div className="m-2 rounded-lg w-full ">
+                            <h1 className="flex justify-center w-full font-semibold ">Project Title</h1>
+                            <p className=" hidden xxs:flex text-xs text-left">This was a project about making a website for the here I used react node.js and tailwind along with typescript</p>
                         </div>
                         
                     </div>
 
-                    <div className=" h-[7rem] bg-tertiary rounded-lg flex m-3 flex-row items-center justify-center border-[.1rem] border-solid border-primary shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]">
+                    <div className=" h-[7rem] bg-tertiary rounded-lg flex m-3 flex-row items-center  border-[.1rem] border-solid border-primary shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]">
                         
                         <img alt="image of project#1" src={tricon} className="h-full w-[9rem] block mr-2 rounded-l-lg"/>
-                        <div className="m-2 rounded-lg ">
-                            <h1 className="flex justify-center font-semibold ">Project Title</h1>
-                            <p className=" text-xs text-left">This was a project about making a website for the here I used react node.js and tailwind along with typescript</p>
+                        <div className="m-2 rounded-lg w-full ">
+                            <h1 className="flex justify-center font-semibold w-full ">Project Title</h1>
+                            <p className=" hidden xxs:flex text-xs text-left">This was a project about making a website for the here I used react node.js and tailwind along with typescript</p>
                         </div>
                         
                     </div>
 
-                    <div className=" h-[7rem] bg-tertiary rounded-lg flex m-3 flex-row items-center justify-center border-[.1rem] border-solid border-primary shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]">
+                    <div className=" h-[7rem] bg-tertiary rounded-lg flex m-3 flex-row items-center  border-[.1rem] border-solid border-primary shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]">
                         
                         <img alt="image of project#1" src={tricon} className="h-full w-[9rem] block mr-2 rounded-l-lg"/>
-                        <div className="m-2 rounded-lg ">
-                            <h1 className="flex justify-center font-semibold ">Project Title</h1>
-                            <p className=" text-xs text-left">This was a project about making a website for the here I used react node.js and tailwind along with typescript</p>
+                        <div className="m-2 rounded-lg w-full ">
+                            <h1 className="flex justify-center font-semibold w-full ">Project Title</h1>
+                            <p className=" hidden xxs:flex text-xs text-left">This was a project about making a website for the here I used react node.js and tailwind along with typescript</p>
                         </div>
                         
                     </div>
